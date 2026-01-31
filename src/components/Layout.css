@@ -1,0 +1,5 @@
+.app-layout main {
+  min-height: calc(100vh - 140px); /* adjust for header + footer height */
+  padding: 40px;
+  background: linear-gradient(135deg, #141e30, #243b55);
+}

@@ -1,0 +1,68 @@
+/* Background */
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  padding: 40px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Title */
+.dashboard-title {
+  color: white;
+  margin-bottom: 5px;
+}
+
+/* Subtitle */
+.dashboard-subtitle {
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+/* Grid layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Cards */
+.dashboard-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: 0.4s;
+  animation: fadeUp 0.8s ease;
+}
+
+/* Hover animation */
+.dashboard-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: #1d2671;
+  color: white;
+}
+
+/* Card text */
+.dashboard-card p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Entry animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+}

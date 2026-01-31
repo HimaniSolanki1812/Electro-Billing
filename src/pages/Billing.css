@@ -1,0 +1,119 @@
+.billing-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.billing-card {
+  background: #fff;
+  padding: 30px;
+  width: 900px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  animation: fadeIn 0.8s ease;
+}
+
+.billing-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.section label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.section select,
+.section input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.customer-info {
+  margin-top: 10px;
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.product-row {
+  display: flex;
+  gap: 10px;
+}
+
+.product-row button {
+  padding: 10px 15px;
+  background: #243b55;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.product-row button:hover {
+  background: #141e30;
+}
+
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.bill-table th,
+.bill-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.bill-table th {
+  background: #243b55;
+  color: white;
+}
+
+.total-box {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.final-total {
+  font-size: 20px;
+  color: #c33764;
+}
+
+.save-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #1d2671;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #c33764;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

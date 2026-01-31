@@ -1,0 +1,82 @@
+/* Full page background */
+.login-container {
+  height: 100vh;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Login card */
+.login-card {
+  background: white;
+  padding: 40px;
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideIn 1s ease;
+}
+
+/* Title */
+.login-title {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Subtitle */
+.login-subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+/* Input fields */
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Input focus animation */
+.login-input:focus {
+  outline: none;
+  border-color: #1d2671;
+  box-shadow: 0 0 8px rgba(29, 38, 113, 0.5);
+}
+
+/* Login button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: #1d2671;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Button hover */
+.login-button:hover {
+  background: #c33764;
+  transform: scale(1.05);
+}
+
+/* Card animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
