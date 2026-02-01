@@ -92,3 +92,21 @@ export const deletePaidBillByIndex = (index) => {
   paid.splice(index, 1); // remove the item at index
   localStorage.setItem("paidBills", JSON.stringify(paid));
 };
+
+
+// ❌❌ DELETE CUSTOMER COMPLETELY ❌❌
+export const deleteCustomerHistory = (customerName) => {
+  // Remove from paid bills
+  const paidBills = JSON.parse(localStorage.getItem("paidBills")) || [];
+  const updatedPaid = paidBills.filter(
+    (b) => b.customer.toLowerCase() !== customerName.toLowerCase()
+  );
+  localStorage.setItem("paidBills", JSON.stringify(updatedPaid));
+
+  // Remove from pending bills
+  const pendingBills = JSON.parse(localStorage.getItem("pendingBills")) || [];
+  const updatedPending = pendingBills.filter(
+    (p) => p.name.toLowerCase() !== customerName.toLowerCase()
+  );
+  localStorage.setItem("pendingBills", JSON.stringify(updatedPending));
+};

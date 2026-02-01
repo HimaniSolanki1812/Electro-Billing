@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-links">
         <Link to="/about">About Us</Link>
         <Link to="/contact">Contact</Link>
-        <Link to="/privacy">Privacy Policy</Link>
+        <Link to="/privacy-policy">Privacy Policy</Link>
       </div>
       <p>&copy; 2026 Electronic Shop. All Rights Reserved.</p>
     </footer>

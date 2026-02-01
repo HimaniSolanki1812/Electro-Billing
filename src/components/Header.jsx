@@ -24,8 +24,6 @@ function Header() {
       ) : (
         <nav className="nav-links">
           <Link to="/dashboard">Dashboard</Link>
-          <Link to="/add-customer">Add Customer</Link>
-          <Link to="/add-product">Add Product</Link>
           <Link to="/billing">Billing</Link>
           <Link to="/pending-payments">Pending Payments</Link>
           <Link to="/paid-payments">Paid Payments</Link>

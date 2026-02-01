@@ -16,6 +16,7 @@ import CustomerHistory from "./pages/CustomerHistory";
 import CustomerHistoryDetails from "./pages/CustomerHistoryDetails";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const App = () => {
   return (
@@ -113,6 +114,7 @@ const App = () => {
             </Layout>
           }
         />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   );

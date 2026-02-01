@@ -19,25 +19,33 @@
   margin-bottom: 40px;
 }
 
-/* Grid layout */
+/* Grid layout (perfect 2×2 center) */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  max-width: 900px;
-  margin: auto;
+  grid-template-columns: repeat(2, 320px);
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 /* Cards */
 .dashboard-card {
+  height: 200px;
   background: white;
-  padding: 30px;
   border-radius: 15px;
   text-decoration: none;
   color: #333;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: 0.4s;
   animation: fadeUp 0.8s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box; /* important */
+  padding: 30px;
 }
 
 /* Hover animation */
@@ -47,10 +55,14 @@
   color: white;
 }
 
-/* Card text */
+/* Card text spacing */
+.dashboard-card h3 {
+  margin: 0;
+}
+
 .dashboard-card p {
+  margin: 8px 0 0 0;
   font-size: 14px;
-  margin-top: 8px;
 }
 
 /* Entry animation */
@@ -63,6 +75,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-  
-  
 }

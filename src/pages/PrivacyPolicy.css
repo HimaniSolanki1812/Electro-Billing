@@ -1,0 +1,90 @@
+/* Container */
+.privacy-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e2e8f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Header */
+.privacy-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.privacy-main-title {
+  font-size: 36px;
+  color: #f1f5f9;
+  margin-bottom: 12px;
+}
+
+.privacy-intro {
+  font-size: 16px;
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+
+/* Cards */
+.privacy-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.privacy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
+}
+
+.privacy-card h2 {
+  font-size: 20px;
+  color: #f1f5f9;
+  margin-bottom: 12px;
+}
+
+.privacy-card p {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.privacy-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: #cbd5e1;
+}
+
+.privacy-card ul li {
+  margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: 30px 20px;
+    margin: 30px 15px;
+  }
+
+  .privacy-main-title {
+    font-size: 28px;
+  }
+
+  .privacy-card h2 {
+    font-size: 18px;
+  }
+
+  .privacy-intro, .privacy-card p, .privacy-card ul li {
+    font-size: 14px;
+  }
+}
