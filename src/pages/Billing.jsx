@@ -44,91 +44,90 @@ const Billing = () => {
 
   // PDF Generator (unchanged)
   const generatePDF = (previousPending, grandTotal, pendingAmount) => {
-  const doc = new jsPDF("p", "mm", "a4");
+    const doc = new jsPDF("p", "mm", "a4");
+    
+    const now = new Date();
+    const date = now.toLocaleDateString();
+    const time = now.toLocaleTimeString();
+    
+    doc.setFontSize(20);
+    doc.setFont("helvetica", "bold");
+    doc.text("ELECTRONIC SHOP", 105, 18, { align: "center" });
 
-  const now = new Date();
-  const date = now.toLocaleDateString();
-  const time = now.toLocaleTimeString();
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "normal");
+    doc.text("Sales Invoice", 105, 25, { align: "center" });
 
-  doc.setFontSize(20);
-  doc.setFont("helvetica", "bold");
-  doc.text("ELECTRONIC SHOP", 105, 18, { align: "center" });
+    doc.line(15, 30, 195, 30);
 
-  doc.setFontSize(11);
-  doc.setFont("helvetica", "normal");
-  doc.text("Sales Invoice", 105, 25, { align: "center" });
+    doc.setFontSize(10);
+    doc.text(`Invoice Date: ${date}`, 150, 36);
+    doc.text(`Invoice Time: ${time}`, 150, 42);
+    doc.rect(15, 38, 120, 28);
 
-  doc.line(15, 30, 195, 30);
+    doc.setFont("helvetica", "bold");
+    doc.text("Customer Details", 18, 45);
 
-  doc.setFontSize(10);
-  doc.text(`Invoice Date: ${date}`, 150, 36);
-  doc.text(`Invoice Time: ${time}`, 150, 42);
+    doc.setFont("helvetica", "normal");
+    doc.text(`Name    : ${customerName}`, 18, 52);
+    doc.text(`Mobile  : ${mobile}`, 18, 58);
+    doc.text(`Address : ${address}`, 18, 64);
+    
+    let y = 75;
 
-  doc.rect(15, 38, 120, 28);
+    doc.setFillColor(230, 230, 230);
+    doc.rect(15, y, 180, 8, "F");
 
-  doc.setFont("helvetica", "bold");
-  doc.text("Customer Details", 18, 45);
-
-  doc.setFont("helvetica", "normal");
-  doc.text(`Name    : ${customerName}`, 18, 52);
-  doc.text(`Mobile  : ${mobile}`, 18, 58);
-  doc.text(`Address : ${address}`, 18, 64);
-
-  let y = 75;
-
-  doc.setFillColor(230, 230, 230);
-  doc.rect(15, y, 180, 8, "F");
-
-  doc.setFont("helvetica", "bold");
-  doc.text("No", 18, y + 6);
-  doc.text("Product", 30, y + 6);
-  doc.text("Qty", 110, y + 6);
-  doc.text("Price", 135, y + 6);
-  doc.text("Total", 165, y + 6);
-
-  y += 8;
-
-  doc.setFont("helvetica", "normal");
-
-  billItems.forEach((item, index) => {
-    doc.rect(15, y, 180, 8);
-    doc.text(String(index + 1), 18, y + 6);
-    doc.text(item.name, 30, y + 6);
-    doc.text(String(item.quantity), 110, y + 6);
-    doc.text(`₹${item.price}`, 135, y + 6);
-    doc.text(`₹${item.total}`, 165, y + 6);
+    doc.setFont("helvetica", "bold");
+    doc.text("No", 18, y + 6);
+    doc.text("Product", 30, y + 6);
+    doc.text("Qty", 110, y + 6);
+    doc.text("Price", 135, y + 6);
+    doc.text("Total", 165, y + 6);
+    
     y += 8;
-  });
-
-  y += 5;
-
-  doc.rect(120, y, 75, 32);
-
-  doc.text(`Previous Pending : ₹${previousPending}`, 123, y + 8);
-  doc.text(`Bill Total       : ₹${currentTotal}`, 123, y + 15);
-  doc.text(`Paid Amount      : ₹${paidAmount}`, 123, y + 22);
-
-  doc.setFont("helvetica", "bold");
-  doc.text(`Final Pending    : ₹${pendingAmount}`, 123, y + 29);
-
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "italic");
-  doc.text(
-    "Thank you for your purchase!",
-    105,
-    285,
-    { align: "center" }
-  );
-
-  doc.text(
-    "This is a computer-generated invoice.",
-    105,
-    292,
-    { align: "center" }
-  );
-
-  doc.save(`${customerName}_${date}.pdf`);
-};
+    
+    doc.setFont("helvetica", "normal");
+    
+    billItems.forEach((item, index) => {
+      doc.rect(15, y, 180, 8);
+      doc.text(String(index + 1), 18, y + 6);
+      doc.text(item.name, 30, y + 6);
+      doc.text(String(item.quantity), 110, y + 6);
+      doc.text(`₹${item.price}`, 135, y + 6);
+      doc.text(`₹${item.total}`, 165, y + 6);
+      y += 8;
+    });
+    
+    y += 5;
+    
+    doc.rect(120, y, 75, 32);
+    
+    doc.text(`Previous Pending : ₹${previousPending}`, 123, y + 8);
+    doc.text(`Bill Total       : ₹${currentTotal}`, 123, y + 15);
+    doc.text(`Paid Amount      : ₹${paidAmount}`, 123, y + 22);
+    
+    doc.setFont("helvetica", "bold");
+    doc.text(`Final Pending    : ₹${pendingAmount}`, 123, y + 29);
+    
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "italic");
+    doc.text(
+      "Thank you for your purchase!",
+      105,
+      285,
+      { align: "center" }
+    );
+    
+    doc.text(
+      "This is a computer-generated invoice.",
+      105,
+      292,
+      { align: "center" }
+    );
+    
+    doc.save(`${customerName}_${date}.pdf`);
+  };
 
 
   // ✅ Save Bill (storage.js used)
