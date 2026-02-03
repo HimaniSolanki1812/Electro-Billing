@@ -50,83 +50,86 @@ const Billing = () => {
     const date = now.toLocaleDateString();
     const time = now.toLocaleTimeString();
     
-    doc.setFontSize(20);
+    doc.setFillColor(30, 136, 229);
+    doc.rect(0, 0, 210, 32, "F");
+
+    doc.setTextColor(255);
+    doc.setFontSize(22);
     doc.setFont("helvetica", "bold");
-    doc.text("ELECTRONIC SHOP", 105, 18, { align: "center" });
+    doc.text("ELECTRO BILLING", 105, 20, { align: "center" });
 
     doc.setFontSize(11);
     doc.setFont("helvetica", "normal");
-    doc.text("Sales Invoice", 105, 25, { align: "center" });
+    doc.text("Electronic Sales Invoice", 105, 27, { align: "center" });
 
-    doc.line(15, 30, 195, 30);
+    doc.setTextColor(0);
 
     doc.setFontSize(10);
-    doc.text(`Invoice Date: ${date}`, 150, 36);
-    doc.text(`Invoice Time: ${time}`, 150, 42);
-    doc.rect(15, 38, 120, 28);
+    doc.text(`Invoice Date: ${date}`, 15, 40);
+    doc.text(`Time: ${time}`, 15, 46);
+
+  
+    doc.setFillColor(245, 247, 250);
+    doc.rect(15, 52, 180, 26, "F");
 
     doc.setFont("helvetica", "bold");
-    doc.text("Customer Details", 18, 45);
+    doc.text("Customer Details", 18, 60);
 
     doc.setFont("helvetica", "normal");
-    doc.text(`Name    : ${customerName}`, 18, 52);
-    doc.text(`Mobile  : ${mobile}`, 18, 58);
-    doc.text(`Address : ${address}`, 18, 64);
-    
-    let y = 75;
+    doc.text(`Name    : ${customerName}`, 18, 67);
+    doc.text(`Mobile  : ${mobile}`, 18, 73);
+    doc.text(`Address : ${address}`, 18, 79);
 
-    doc.setFillColor(230, 230, 230);
-    doc.rect(15, y, 180, 8, "F");
+  
+    let y = 90;
+
+    doc.rect(15, y, 180, 10 + billItems.length*8);
+
+    doc.setFillColor(224, 224, 224);
+    doc.rect(15, y, 180, 10, "F");
 
     doc.setFont("helvetica", "bold");
-    doc.text("No", 18, y + 6);
-    doc.text("Product", 30, y + 6);
-    doc.text("Qty", 110, y + 6);
-    doc.text("Price", 135, y + 6);
-    doc.text("Total", 165, y + 6);
+    doc.text("Product", 20, y + 7);
+    doc.text("Qty", 115, y + 7);
+    doc.text("Rate", 135, y + 7);
+    doc.text("Amount", 165, y + 7);
     
-    y += 8;
-    
+    y += 10;
     doc.setFont("helvetica", "normal");
     
-    billItems.forEach((item, index) => {
-      doc.rect(15, y, 180, 8);
-      doc.text(String(index + 1), 18, y + 6);
-      doc.text(item.name, 30, y + 6);
-      doc.text(String(item.quantity), 110, y + 6);
-      doc.text(`₹${item.price}`, 135, y + 6);
-      doc.text(`₹${item.total}`, 165, y + 6);
+    billItems.forEach((item) => {
+      doc.line(15, y, 195, y);
+      doc.text(item.name, 20, y+6);
+      doc.text(String(item.quantity), 115, y+6);
+      doc.text(`₹${item.price}`, 135, y+6);
+      doc.text(`₹${item.total}`, 165, y+6);
       y += 8;
     });
     
-    y += 5;
+    y += 10;
     
-    doc.rect(120, y, 75, 32);
-    
-    doc.text(`Previous Pending : ₹${previousPending}`, 123, y + 8);
-    doc.text(`Bill Total       : ₹${currentTotal}`, 123, y + 15);
-    doc.text(`Paid Amount      : ₹${paidAmount}`, 123, y + 22);
-    
+    doc.setFillColor(240, 248, 255);
+    doc.rect(110, y, 85, 36, "F");
+
+    doc.setFontSize(10); 
+    doc.setFont("helvetica", "normal");
+    doc.text(`Previous Pending : ₹${previousPending}`, 115, y + 8);
+    doc.text(`Bill Amount      : ₹${currentTotal}`, 115, y + 16);
+    doc.text(`Paid Amount      : ₹${paidAmount}`, 115, y + 24);
+
     doc.setFont("helvetica", "bold");
-    doc.text(`Final Pending    : ₹${pendingAmount}`, 123, y + 29);
-    
-    doc.setFontSize(10);
+    doc.setFontSize(12);
+    doc.text(`Final Pending : ₹${pendingAmount}`, 115, y + 33);
+
+  
+    doc.setFontSize(9);
     doc.setFont("helvetica", "italic");
-    doc.text(
-      "Thank you for your purchase!",
-      105,
-      285,
-      { align: "center" }
-    );
+    doc.text("This is a Software generated invoice", 105, 285, {
+      align: "center",
+    });
+    doc.text("Visit Again!", 105, 287, { align: "center" });
     
-    doc.text(
-      "This is a computer-generated invoice.",
-      105,
-      292,
-      { align: "center" }
-    );
-    
-    doc.save(`${customerName}_${date}.pdf`);
+    doc.save(`${customerName}_${date}_Invoice.pdf`);
   };
 
 
