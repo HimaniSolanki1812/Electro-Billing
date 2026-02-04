@@ -110,3 +110,18 @@ export const deleteCustomerHistory = (customerName) => {
   );
   localStorage.setItem("pendingBills", JSON.stringify(updatedPending));
 };
+
+//--Invoice Generation--
+export const getNextInvooiceNumber = () => {
+  let lastInvoice = localStorage.getItem("invoiceNumber")
+
+  if (!lastInvoice) {
+    lastInvoice = 1;
+  } else {
+    lastInvoice = parseInt(lastInvoice) + 1;
+  }
+
+  localStorage.setItem("InvoiceNumber", lastInvoice);
+
+  return `INV-${String(lastInvoice).padStart(4, "0")}`
+};
