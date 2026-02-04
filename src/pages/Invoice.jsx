@@ -1,4 +1,5 @@
 import React from "react";
+import { getNextInvoiceNumber } from "../utils/storage";
 
 const Invoice = () => {
   const bill = JSON.parse(localStorage.getItem("lastBill"));

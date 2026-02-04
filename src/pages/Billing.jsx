@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import jsPDF from "jspdf";
 import "./Billing.css";
 
-// ✅ import storage functions
+// import storage functions
 import {
   getPendingBills,
   setPendingBills,
   getPaidBills,
   addPaidBill,
+  getNextInvoiceNumber
 } from "../utils/storage";
 
 const Billing = () => {
@@ -44,8 +45,9 @@ const Billing = () => {
 
   // PDF Generator (unchanged)
   const generatePDF = (previousPending, grandTotal, pendingAmount) => {
-    const doc = new jsPDF("p", "mm", "a4");
+    const invoiceNumber = getNextInvoiceNumber();
     
+    const doc = new jsPDF("p", "mm", "a4");
     const now = new Date();
     const date = now.toLocaleDateString();
     const time = now.toLocaleTimeString();
