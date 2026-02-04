@@ -67,6 +67,9 @@ const Billing = () => {
     doc.setTextColor(0);
 
     doc.setFontSize(10);
+    doc.setFont("helevetica", "bold");
+    doc.text(`Invoice No: ${invoiceNumber}`, 150, 40);
+    doc.setFont("helvetica", "normal");
     doc.text(`Invoice Date: ${date}`, 15, 40);
     doc.text(`Time: ${time}`, 15, 46);
 
