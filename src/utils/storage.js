@@ -113,15 +113,15 @@ export const deleteCustomerHistory = (customerName) => {
 
 //--Invoice Generation--
 export const getNextInvoiceNumber = () => {
-  let lastInvoice = localStorage.getItem("invoiceNumber")
+  let current = localStorage.getItem("invoiceNumber");
 
-  if (!lastInvoice) {
-    lastInvoice = 1;
+  if (!current) {
+    current = 1;
   } else {
-    lastInvoice = parseInt(lastInvoice) + 1;
+    current = parseInt(current) + 1;
   }
 
-  localStorage.setItem("InvoiceNumber", lastInvoice);
+  localStorage.setItem("invoiceNumber", current);
 
-  return `INV-${String(lastInvoice).padStart(4, "0")}`
+  return `INV-${String(current).padStart(4, "0")}`;
 };
