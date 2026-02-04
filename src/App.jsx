@@ -6,8 +6,8 @@ import Layout from "./components/Layout";
 // Pages
 import LoginPage from "./pages/LoginPage";
 import Dashboard from "./pages/Dashboard";
-//import AddCustomer from "./pages/AddCustomer";
-//import AddProduct from "./pages/AddProduct";
+// import AddCustomer from "./pages/AddCustomer";
+// import AddProduct from "./pages/AddProduct";
 import Billing from "./pages/Billing";
 import PendingPayments from "./pages/PendingPayments";
 import PaidPayments from "./pages/PaidPayments";
@@ -34,6 +34,22 @@ const App = () => {
             </Layout>
           }
         />
+        {/* <Route
+          path="/add-customer"
+          element={
+            <Layout>
+              <AddCustomer />
+            </Layout>
+          }
+        /> */}
+        {/* <Route
+          path="/add-product"
+          element={
+            <Layout>
+              <AddProduct />
+            </Layout>
+          }
+        /> */}
         <Route
           path="/billing"
           element={
