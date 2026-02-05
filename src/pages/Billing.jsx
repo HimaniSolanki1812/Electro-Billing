@@ -56,20 +56,20 @@ const Billing = () => {
     doc.rect(0, 0, 210, 32, "F");
 
     doc.setTextColor(255);
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "bold");
+    doc.setFontSize(22);
+    doc.setFont("times", "bold");
     doc.text("ELECTRO BILLING", 105, 20, { align: "center" });
 
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12);
+    doc.setFont("times", "bold");
     doc.text("Electronic Sales Invoice", 105, 27, { align: "center" });
 
     doc.setTextColor(0);
 
     doc.setFontSize(10);
-    doc.setFont("helvetica", "bold");
+    doc.setFont("times", "bold");
     doc.text(`Invoice No: ${invoiceNumber}`, 150, 40);
-    doc.setFont("helvetica", "normal");
+    doc.setFont("times", "normal");
     doc.text(`Invoice Date: ${date}`, 15, 40);
     doc.text(`Time: ${time}`, 15, 46);
 
@@ -77,10 +77,11 @@ const Billing = () => {
     doc.setFillColor(245, 247, 250);
     doc.rect(15, 52, 180, 38, "F");
 
-    doc.setFont("helvetica", "bold");
+    doc.setFont("times", "bold");
     doc.text("Customer Details", 18, 60);
 
-    doc.setFont("helvetica", "normal");
+    doc.setCharSpace(0);
+    doc.setFont("times", "normal");
     doc.text(`Name    : ${customerName}`, 18, 68);
     doc.text(`Mobile  : ${mobile}`, 18, 76);
     doc.text(`Address : ${address}`, 18, 84);
@@ -93,14 +94,15 @@ const Billing = () => {
     doc.setFillColor(224, 224, 224);
     doc.rect(15, y, 180, 10, "F");
 
-    doc.setFont("helvetica", "bold");
+    doc.setCharSpace(0)
+    doc.setFont("times", "normal");
     doc.text("Product", 20, y + 7);
     doc.text("Qty", 115, y + 7);
     doc.text("Rate", 135, y + 7);
     doc.text("Amount", 165, y + 7);
     
     y += 10;
-    doc.setFont("helvetica", "normal");
+    doc.setFont("times", "normal");
     
     billItems.forEach((item) => {
       doc.text(item.name, 20, y+6);
@@ -116,18 +118,18 @@ const Billing = () => {
     doc.rect(110, y, 85, 36, "F");
 
     doc.setFontSize(10); 
-    doc.setFont("helvetica", "normal");
+    doc.setFont("times", "normal");
     doc.text(`Previous Pending : ₹${previousPending}`, 115, y + 8);
     doc.text(`Bill Amount      : ₹${currentTotal}`, 115, y + 16);
     doc.text(`Paid Amount      : ₹${paidAmount}`, 115, y + 24);
 
-    doc.setFont("helvetica", "bold");
+    doc.setFont("times", "bold");
     doc.setFontSize(12);
     doc.text(`Final Pending : ₹${pendingAmount}`, 115, y + 33);
 
   
     doc.setFontSize(9);
-    doc.setFont("helvetica", "italic");
+    doc.setFont("times", "normal");
     doc.text("This is a Software generated invoice", 105, 285, {
       align: "center",
     });
