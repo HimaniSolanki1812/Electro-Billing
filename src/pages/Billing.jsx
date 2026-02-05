@@ -56,18 +56,18 @@ const Billing = () => {
     doc.rect(0, 0, 210, 32, "F");
 
     doc.setTextColor(255);
-    doc.setFontSize(22);
+    doc.setFontSize(12);
     doc.setFont("helvetica", "bold");
     doc.text("ELECTRO BILLING", 105, 20, { align: "center" });
 
-    doc.setFontSize(11);
+    doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.text("Electronic Sales Invoice", 105, 27, { align: "center" });
 
     doc.setTextColor(0);
 
     doc.setFontSize(10);
-    doc.setFont("helevetica", "bold");
+    doc.setFont("helvetica", "bold");
     doc.text(`Invoice No: ${invoiceNumber}`, 150, 40);
     doc.setFont("helvetica", "normal");
     doc.text(`Invoice Date: ${date}`, 15, 40);
@@ -86,7 +86,7 @@ const Billing = () => {
     doc.text(`Address : ${address}`, 18, 79);
 
   
-    let y = 90;
+    let y = 70;
 
     doc.rect(15, y, 180, 10 + billItems.length*8);
 
