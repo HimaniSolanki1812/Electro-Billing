@@ -95,9 +95,9 @@ const Billing = () => {
 
     doc.setFont("helvetica", "bold");
     doc.text("Product", 20, y + 7);
-    doc.text("Qty", 115, y + 7);
-    doc.text("Rate", 135, y + 7);
-    doc.text("Amount", 165, y + 7);
+    doc.text("Qty", 20, y + 7);
+    doc.text("Rate", 20, y + 7);
+    doc.text("Amount", 20, y + 7);
     
     y += 10;
     doc.setFont("helvetica", "normal");
