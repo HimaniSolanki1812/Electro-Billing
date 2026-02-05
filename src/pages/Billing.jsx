@@ -86,7 +86,7 @@ const Billing = () => {
     doc.text(`Address : ${address}`, 18, 84);
 
   
-    let y = 70;
+    let y = 98;
 
     doc.rect(15, y, 180, 10 + billItems.length*10);
 
