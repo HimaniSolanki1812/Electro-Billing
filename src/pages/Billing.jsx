@@ -75,15 +75,15 @@ const Billing = () => {
 
   
     doc.setFillColor(245, 247, 250);
-    doc.rect(15, 52, 180, 26, "F");
+    doc.rect(15, 52, 180, 38, "F");
 
     doc.setFont("helvetica", "bold");
     doc.text("Customer Details", 18, 60);
 
     doc.setFont("helvetica", "normal");
-    doc.text(`Name    : ${customerName}`, 18, 67);
-    doc.text(`Mobile  : ${mobile}`, 18, 73);
-    doc.text(`Address : ${address}`, 18, 79);
+    doc.text(`Name    : ${customerName}`, 18, 68);
+    doc.text(`Mobile  : ${mobile}`, 18, 76);
+    doc.text(`Address : ${address}`, 18, 84);
 
   
     let y = 70;
