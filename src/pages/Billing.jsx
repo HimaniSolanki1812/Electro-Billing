@@ -57,11 +57,11 @@ const Billing = () => {
 
     doc.setTextColor(255);
     doc.setFontSize(22);
-    doc.setFont("times", "normal");
+    doc.setFont("times", "bold");
     doc.text("ELECTRO BILLING", 105, 20, { align: "center" });
 
     doc.setFontSize(12);
-    doc.setFont("times", "normal");
+    doc.setFont("times", "bold");
     doc.text("Electronic Sales Invoice", 105, 27, { align: "center" });
 
     doc.setTextColor(0);
@@ -121,7 +121,7 @@ const Billing = () => {
     doc.text(`Bill Amount      : ₹${currentTotal}`, 115, y + 16);
     doc.text(`Paid Amount      : ₹${paidAmount}`, 115, y + 24);
 
-    doc.setFont("times", "normal");
+    doc.setFont("times", "bold");
     doc.setFontSize(12);
     doc.text(`Final Pending : ₹${pendingAmount}`, 115, y + 33);
 
