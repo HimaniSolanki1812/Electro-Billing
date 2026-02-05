@@ -88,7 +88,7 @@ const Billing = () => {
   
     let y = 70;
 
-    doc.rect(15, y, 180, 10 + billItems.length*8);
+    doc.rect(15, y, 180, 10 + billItems.length*10);
 
     doc.setFillColor(224, 224, 224);
     doc.rect(15, y, 180, 10, "F");
@@ -103,12 +103,11 @@ const Billing = () => {
     doc.setFont("helvetica", "normal");
     
     billItems.forEach((item) => {
-      doc.line(15, y, 195, y);
       doc.text(item.name, 20, y+6);
       doc.text(String(item.quantity), 115, y+6);
       doc.text(`₹${item.price}`, 135, y+6);
       doc.text(`₹${item.total}`, 165, y+6);
-      y += 8;
+      y += 10;
     });
     
     y += 10;
