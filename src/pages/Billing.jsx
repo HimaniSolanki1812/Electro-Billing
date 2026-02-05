@@ -67,7 +67,7 @@ const Billing = () => {
     doc.setTextColor(0);
 
     doc.setFontSize(10);
-    doc.setFont("times", "normal");
+    doc.setFont("times", "bold");
     doc.text(`Invoice No: ${invoiceNumber}`, 150, 40);
     doc.setFont("times", "normal");
     doc.text(`Invoice Date: ${date}`, 15, 40);
@@ -77,9 +77,10 @@ const Billing = () => {
     doc.setFillColor(245, 247, 250);
     doc.rect(15, 52, 180, 38, "F");
 
-    doc.setFont("times", "normal");
+    doc.setFont("times", "bold");
     doc.text("Customer Details", 18, 60);
 
+    doc.setCharSpace(0);
     doc.setFont("times", "normal");
     doc.text(`Name    : ${customerName}`, 18, 68);
     doc.text(`Mobile  : ${mobile}`, 18, 76);
@@ -93,6 +94,7 @@ const Billing = () => {
     doc.setFillColor(224, 224, 224);
     doc.rect(15, y, 180, 10, "F");
 
+    doc.setCharSpace(0)
     doc.setFont("times", "normal");
     doc.text("Product", 20, y + 7);
     doc.text("Qty", 115, y + 7);
